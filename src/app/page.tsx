@@ -14,7 +14,7 @@ export default function Home() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (!query.trim()) {
+    if (!query || query== "") {
       setError('Please enter a city name.');
       setWeather(null);
       setAIRecommendation('');
@@ -61,8 +61,8 @@ export default function Home() {
 
       {error && <p className="text-red-500 mb-4">{error}</p>}
       <div>
-        {weather && query && <WeatherDisplay weather={weather} />}
-        {aiRecommendation && <OutfitRecommendation recommendation={aiRecommendation} />}
+        {weather && <WeatherDisplay weather={weather} />}
+        {aiRecommendation &&  <OutfitRecommendation recommendation={aiRecommendation} />}
       </div>
 
     </main>
