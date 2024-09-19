@@ -1,7 +1,8 @@
 import { NextResponse, NextRequest } from 'next/server';
+import config from '../../../../tailwind.config';
 
-const API_KEY = process.env.WEATHERSTACK_API_KEY;
-const BASE_URL = process.env.WEATHERSTACK_API_BASE_URL;
+const API_KEY = config.weatherstack.apiKey;
+const BASE_URL = config.weatherstack.baseUrl;
 
 export async function GET(request: NextRequest) {
 

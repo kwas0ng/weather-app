@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import dotenv from 'dotenv'
 
 const config: Config = {
   content: [
@@ -12,6 +13,10 @@ const config: Config = {
         sans: ['var(--font-inter)'],
       },
     },
+  },
+  weatherstack: {
+    apiKey: process.env.WEATHERSTACK_API_KEY,
+    baseUrl: process.env.WEATHERSTACK_API_BASE_URL,
   },
   plugins: [],
 };
